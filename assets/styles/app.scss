@@ -1,3 +1,48 @@
-body {
-    background-color: lightgray;
+// body {
+//     background-color: lightgray;
+// }
+
+// Own variables and BS overwrite
+@import "variables";
+
+// BS Lib
+@import "~bootstrap/scss/bootstrap";
+
+// mixins
+@import "mixins/respond-to";
+
+// My Libs
+@import "components/grid";
+
+$toto: red;
+
+a {
+    color: $toto;
+
+    &:hover {
+        background-color: purple;
+    }
+
+    span {
+        color: yellow;
+    }
+}
+
+.profile-pic, .bidule-pic {
+    a {
+        color: red;
+    }
+    float: left;
+    width: 250px;
+
+    @include respond-to(xs) {
+        width: 100%;
+    }
+
+    @include respond-to(sm) {
+        width: 125px;
+    }
+    @include respond-to(md) {
+        float: none;
+    }
 }

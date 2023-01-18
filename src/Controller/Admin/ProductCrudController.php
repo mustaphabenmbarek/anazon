@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Admin\Field\VichImageField;
 use App\Entity\Product;
 use App\Form\ProductImageType;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
@@ -26,6 +27,7 @@ class ProductCrudController extends AbstractCrudController
         yield Field::new('name');
         yield MoneyField::new('price')->setCurrency('EUR')->setStoredAsCents(false);
         yield TextEditorField::new('description')->hideOnIndex();
+        yield VichImageField::new('imageFile');
 
         yield FormField::addTab('Images');
         yield CollectionField::new('productImages')
