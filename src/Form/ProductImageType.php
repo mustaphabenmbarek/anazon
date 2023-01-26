@@ -14,6 +14,7 @@ class ProductImageType extends AbstractType
         $builder
             ->add('path')
             ->add('position')
+            
         ;
     }
 

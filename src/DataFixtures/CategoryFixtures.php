@@ -15,10 +15,15 @@ class CategoryFixtures extends Fixture
         $jouets = new Category();
         $jouets->setTitle('Jouets');
         $manager->persist($jouets);
+        // $mainCategory = new Category();
+        // $mainCategory->setTitle('Main Category');
+        // $manager->persist($mainCategory);
 
         $category = new Category();
         $category->setTitle('Peluches');
+        //$category->setTitle('Sub Category');
         $category->setParent($jouets);
+        //$category->setParent($mainCategory);
         $manager->persist($category);
         $this->addReference(self::CATEGORY_PELUCHES, $category);
 
