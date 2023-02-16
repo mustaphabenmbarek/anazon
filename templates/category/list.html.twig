@@ -1,13 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Liste des catégories{% endblock %}
+{% block title %}Nos catégories{% endblock %}
 
 {% block body %}
-    <h1>Retrouvez tous nos univers</h1>
+<h1>Nos catégories</h1>
 
-    <ul>
-        {% for category in categories %}
-            <li><a href="{{ path('app_category', { id: category.id }) }}">{{ category.title }}</a></li>
-        {% endfor %}
-    </ul>
+<div class="container">
+    {% for category in categories %}
+        <div class="col">
+            <h2>{{ category.title }}</h2>
+            <p>{{ category.description | striptags | u.truncate(10, '...', true) }}</p>
+            <a href="{{ path('app_category', { id: category.id }) }}">Voir</a>   
+        </div>
+    {% endfor %}
+</div>
 {% endblock %}

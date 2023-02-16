@@ -1,17 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Univers {{ category.title }}{% endblock %}
+{% block title %}{{ product.name }}{% endblock %}
 
 {% block body %}
-<h1>{{ category.title }}</h1>
+<h1>{{ product.name }}</h1>
 
-<div class="container">
+{# <div class="container">
     {% for product in category.products %}
         <div class="col">
             <h2>{{ product.name }}</h2>
             <p>{{ product.description | striptags | u.truncate(10, '...', true) }}</p>
-            <a href="{{ path('app_product', { id: product.id }) }}">Voir</a>   
+            <a>Voir</a>   
         </div>
     {% endfor %}
-</div>
+</div> #}
+
 {% endblock %}
